@@ -1,0 +1,17 @@
+{
+  "name": "node",
+  "version": "1.0.0",
+  "main": "first.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon run dev"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "nodemon": "^3.1.4",
+    "readline-sync": "^1.4.10"
+  }
+}
