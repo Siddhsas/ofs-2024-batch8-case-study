@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<body>
+<h2>Welcome to Register Page</h2>
+<oj-c-form-layout
+                  id="formLayoutOptions"
+                  columns="3"
+                  max-columns="3"
+                  direction="row"
+                  fullWidth="true">
+                  <div>
+                    <oj-c-input-text
+                              id="text-input"
+                              value="{{first_name}}"
+                              label-hint="Enter First Name"
+                              label-edge="inside"></oj-c-input-text>
+                  </div>
+                  <div>
+                    <oj-c-input-text
+                              id="text-input"
+                              value="{{last_name}}"
+                              label-hint="Enter Last Name"
+                              label-edge="inside"></oj-c-input-text>
+                  </div>
+                  <div>
+                   
+                    <oj-c-input-password
+                                id="ipdis"
+                                value="{{password}}"
+                                label-hint="Enter Password"></oj-c-input-password>
+                  </div>
+                  <oj-c-input-text id="text-input" value="{{userName}}" label-hint="Enter user name"
+                  label-edge="inside"></oj-c-input-text>
+                <oj-c-input-text id="text-input" value="{{address_1}}" label-hint="Enter address Line 1"
+                  label-edge="inside"></oj-c-input-text>
+                  <oj-c-input-text id="text-input" value="{{address_2}}" label-hint="Enter address Line 2"
+                  label-edge="inside"></oj-c-input-text>
+                  <oj-c-input-text id="text-input" value="{{address_3}}" label-hint="Enter address Line 3"
+                  label-edge="inside"></oj-c-input-text>
+                <oj-c-input-text id="text-input" value="{{city}}" label-hint="Enter city" label-edge="inside"></oj-c-input-text>
+                <oj-c-input-text id="text-input" value="{{state}}" label-hint="Enter state" label-edge="inside"></oj-c-input-text>
+                <oj-c-input-number id="text-input" value="{{pincode}}" label-hint="Enter pincode" label-edge="inside">
+                </oj-c-input-number>
+                <oj-c-input-number id="text-input" value="{{phone_number}}" label-hint="Enter phone" label-edge="inside">
+                </oj-c-input-number>
+                <oj-c-input-text id="text-input" value="{{email}}" label-hint="Enter email" label-edge="inside"></oj-c-input-text>
+             
+  </oj-c-form-layout>
+  <oj-c-button
+  id="dis_button1"
+  chroming="callToAction"
+  label="Register"
+  on-oj-action="[[addCustomer]]"
+  ></oj-c-button>
+</body>
+</html>

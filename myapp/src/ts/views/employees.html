@@ -1,0 +1,48 @@
+<!--
+ Copyright (c) 2014, 2024, Oracle and/or its affiliates.
+ Licensed under The Universal Permissive License (UPL), Version 1.0
+ as shown at https://oss.oracle.com/licenses/upl/
+ -->
+ <div class="oj-hybrid-padding">
+    <h5>
+      Data Provider Table Employee Information
+    </h5>
+    <oj-table
+                id="table"
+                aria-label="Employee Table"
+                accessibility.row-header="Name"
+                data="[[dataprovider]]"
+                columns-default='{"sortable": "disabled"}'
+                columns='[{"headerText": "Employee Id", "field": "id", "id": "empip"},
+                          {"headerText": "Name", "field": "name", "id": "name"},
+                          {"headerText": "Salary", "field": "salary", "id": "salary"},
+                          {"headerText": "Action",
+                          "headerStyle": "text-align: center;",
+                          "style":"text-align: center; padding-top: 0px; padding-bottom: 0px;",
+                          "template": "actionTemplate",
+                          "id": "action"}]'
+                class="demo-table-container"
+                >
+                <template slot="actionTemplate" data-oj-as="cell">
+                  <oj-c-button id="btn" :data-row-info="[[cell.row.id]]"  on-oj-action="[[removeRow]]" chroming="danger" label="delete"></oj-c-button>
+                  <oj-c-button id="btn" :data-row-id="[[cell.row.id]]" :data-row-name="[[cell.row.name]]" :data-row-salary="[[cell.row.salary]]" on-oj-action="[[updateHandler]]" chroming="callToAction" label="update">
+                  </oj-c-button>
+              </template>
+              </oj-table>
+
+
+    <div>
+        <!-- <oj-form-layout readonly="false" colspan-wrap="wrap" max-columns="1"> -->
+            <div>
+              <h6>Create New Employee</h6>
+              <oj-input-text id="inputName" label-hint="Employee Name" value="{{name}}"></oj-input-text>
+              <oj-input-number id="inputSalary" label-hint="Employee Salary" value="{{salary}}"></oj-input-number>
+            </div>
+            <div>
+              <oj-button id="addButton" on-oj-action="[[submitData]]" disabled="[[name()===null | salary()===null]]">Create</oj-button>
+            </div>
+          <!-- </oj-form-layout> -->
+    </div>
+    
+  </div>
+  

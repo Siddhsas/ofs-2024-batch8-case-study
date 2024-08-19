@@ -1,0 +1,106 @@
+<!--
+ Copyright (c) 2014, 2024, Oracle and/or its affiliates.
+ Licensed under The Universal Permissive License (UPL), Version 1.0
+ as shown at https://oss.oracle.com/licenses/upl/
+ -->
+<div class="oj-hybrid-padding">
+  
+  
+  <h3><u>Activity 2 Using Form Layout</u></h3>
+  <div id="form-layout">
+    <oj-c-form-layout
+                  id="formLayoutOptions"
+                  columns="3"
+                  max-columns="3"
+                  direction="row"
+                  fullWidth="true">
+                  <div>
+                    <h2>Input Text Demo</h2>
+                    <oj-c-input-text
+                              id="text-input"
+                              value="{{firstName}}"
+                              label-hint="Enter First Name"
+                              label-edge="inside"></oj-c-input-text>
+                              <h5>Hey <oj-bind-text value="[[firstName]]"></oj-bind-text></h5>
+                  </div>
+                  <div>
+                    <h2>Input Number</h2>
+                    <oj-c-input-number
+                    value="{{salary}}"
+                    label-hint="Enter Salary"
+                    min="0"
+                    max="100"
+                    step="0"></oj-c-input-number>
+                    <h5>Salary is: <oj-bind-text value="[[salary]]"></oj-bind-text></h5>
+                  </div>
+
+                  <div>
+                    <h2>input password</h2>
+                    <oj-c-input-password
+                                id="ipdis"
+                                value="{{password}}"
+                                label-hint="Enter Password"></oj-c-input-password>
+                    <h5> Password is:  <oj-bind-text value="[[password]]"></oj-bind-text> </h5>
+                  </div>
+                  <div id="input date">
+                    <h2>DateTime</h2>
+                    <oj-date-time-picker id="datepicker" value="{{date}}"></oj-date-time-picker>
+                    <h5>Selected Date Time: <oj-bind-text value="[[date]]"></oj-bind-text> </h5>
+                  </div>
+  </oj-c-form-layout>
+  </div>
+  <hr>
+  <div id="activity-3"></div>
+  <h3><u>Actvity 3 </u></h3>
+  <div id="buttons">
+    <h5>Buttons</h5>
+    <oj-c-button id="button1" on-oj-action="[[buttonAction]]" chroming="danger" label="Button Action 1"></oj-c-button>
+    <oj-c-button id="button2" on-oj-action="[[buttonAction]]" chroming="callToAction" label="Button Action 2"></oj-c-button>
+    <h6> Button Clicked: <span> <oj-bind-text value="[[activatedButton]]"></oj-bind-text></span></h6>
+    <oj-c-button id="submit-button" on-oj-action="[[handleClick]]" chroming="outlined" label="Submit"></oj-c-button>
+    <h5>API CALL</h5>
+    <oj-c-input-text
+                              id="text-input"
+                              value="{{firstName}}"
+                              label-hint="Enter ID to Search"
+                              label-edge="top"></oj-c-input-text>
+                                                              <oj-c-button class="oj-hybrid-padding" id="submit-form" on-oj-action="[[callApi]]" chroming="outlined" label="Get Data"
+    disabled="[[firstName()==null]]"
+    ></oj-c-button>
+    <div id="bar" hidden="true">
+      <oj-progress-bar
+              
+              class="oj-sm-margin-4x-bottom demo-width"
+              id="progressBar"
+              value="[[progressValue]]"></oj-progress-bar>
+    </div>
+    <div id="details" hidden="true">
+      <h6>Name: <oj-bind-text value="[[Name]]"></oj-bind-text></h6>
+      <h6>UserName: <oj-bind-text value="[[userName]]"></oj-bind-text></h6>
+      <h6>Email: <oj-bind-text value="[[email]]"></oj-bind-text></h6>
+      <h6>Street: <oj-bind-text value="[[street]]"></oj-bind-text></h6>
+      <h6>Suite: <oj-bind-text value="[[suite]]"></oj-bind-text></h6>
+      <!-- <h6>Name <oj-bind-text value="[[Name]]"></oj-bind-text></h6> -->
+    </div>         
+  </div>
+  <hr>
+  <div id="list">
+    <h5>List view</h5>
+    <oj-c-list-view
+            aria-label="Basic list"
+            data="[[dataProvider]]"
+            id="listview">
+            <template slot="itemTemplate" data-oj-as="item">
+              <oj-c-list-item-layout>
+                <span class="oj-typography-body-md oj-text-color-primary">
+                  <oj-bind-text value="[[item.item.data.name]]"></oj-bind-text>
+                </span>
+                <!-- <oj-c-avatar slot="leading" size="xs" src="[[item.item.data.image]]"></oj-c-avatar> -->
+                <span slot="secondary" class="oj-typography-body-sm oj-text-color-secondary">
+                  <oj-bind-text value="[[item.item.data.title]]"></oj-bind-text>
+                </span>
+              </oj-c-list-item-layout>
+            </template>
+          </oj-c-list-view>
+  </div>
+</div>

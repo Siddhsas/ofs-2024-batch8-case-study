@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <h2>Welcome to login page</h2>
+    <oj-c-form-layout
+                  id="formLayoutOptions"
+                  columns="3"
+                  max-columns="3"
+                  direction="row"
+                  fullWidth="true">
+                  <div>
+                  <div>
+                    <oj-c-input-text
+                              id="text-input"
+                              value="{{userName}}"
+                              label-hint="Enter UserName"
+                              label-edge="inside"></oj-c-input-text>
+                  </div>
+                  <div>
+                    <oj-c-input-password
+                                id="ipdis"
+                                value="{{password}}"
+                                label-hint="Enter Password"></oj-c-input-password>
+                  </div>
+    </oj-c-form-layout>
+    <div id="message"> <oj-bind-text value="[[message]]"></oj-bind-text> </div>
+    <oj-c-button
+  id="dis_button1"
+  chroming="callToAction"
+  label="Login"
+  on-oj-action="[[userLogin]]"
+  ></oj-c-button>
+  <span>
+    <a href="?ojr=register">Don't have an account? click here to register</a>
+  </span>
+  
+</body>
+</html>
